@@ -82,6 +82,11 @@ router.get('/:id', getemployeebyID);
  * application/json:
  * schema:
  * type: object
+ * properties:
+ * name:
+ * type: string
+ * role:
+ * type: string
  * responses:
  * 200:
  * description: Employee updated

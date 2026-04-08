@@ -14,7 +14,7 @@ const employeeSchema = new Schema(
     role: {
       type: String,
       required: true,
-    },
+    },  
     phone: {
       type: Number,
       required: true,

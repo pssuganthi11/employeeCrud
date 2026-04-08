@@ -11,6 +11,12 @@ const {
 /**
  * @swagger
  * /api/employees:
+ * get:
+ * summary: Get all employees
+ * tags: [Employees]
+ * responses:
+ * 200:
+ * description: List of all employees
  * post:
  * summary: Create a new employee
  * tags: [Employees]
@@ -31,19 +37,8 @@ const {
  * 201:
  * description: Employee created successfully
  */
-router.post('/', CreateEmployee);
-
-/**
- * @swagger
- * /api/employees:
- * get:
- * summary: Get all employees
- * tags: [Employees]
- * responses:
- * 200:
- * description: List of all employees
- */
 router.get('/', getAllEmployees);
+router.post('/', CreateEmployee);
 
 /**
  * @swagger
@@ -61,12 +56,6 @@ router.get('/', getAllEmployees);
  * responses:
  * 200:
  * description: Employee details
- */
-router.get('/:id', getemployeebyID);
-
-/**
- * @swagger
- * /api/employees/{id}:
  * put:
  * summary: Update an employee
  * tags: [Employees]
@@ -90,12 +79,6 @@ router.get('/:id', getemployeebyID);
  * responses:
  * 200:
  * description: Employee updated
- */
-router.put('/:id', updateEmployeebyId);
-
-/**
- * @swagger
- * /api/employees/{id}:
  * delete:
  * summary: Delete an employee
  * tags: [Employees]
@@ -109,6 +92,8 @@ router.put('/:id', updateEmployeebyId);
  * 200:
  * description: Employee deleted
  */
+router.get('/:id', getemployeebyID);
+router.put('/:id', updateEmployeebyId);
 router.delete('/:id', deleteEmployeebyId);
 
 module.exports = router;
